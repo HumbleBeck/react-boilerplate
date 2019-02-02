@@ -18,8 +18,8 @@ const packageJSON = JSON.parse(fs.readFileSync(packageJSONPath));
 
 packageJSON.scripts = Object.assign({}, packageJSON.scripts, {
     'start': `node ${path.join(bin, 'start.js')}`,
-    'build:prod': `node ${path.join(bin, 'start.js ')} --config webpack.prod.js`,
-    'build:dev': `node ${path.join(bin, 'start.js ')} --config webpack.dev.js`
+    'build:prod': `node ${path.join(bin, 'build.js ')} --config webpack.prod.js`,
+    'build:dev': `node ${path.join(bin, 'build.js ')} --config webpack.dev.js`
 });
 
 fs.writeFileSync(packageJSONPath, JSON.stringify(packageJSON));
