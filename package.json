@@ -4,9 +4,10 @@
   "description": "Custom react boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build:prod": "webpack --config webpack.prod.js",
-    "build:dev": "webpack --config webpack.dev.js"
+    "postinstall": "node bin/postinstall.js",
+    "start": "node ./bin/start.js",
+    "build:prod": "node bin/build.js --config webpack.prod.js",
+    "build:dev": "node bin/build.js --config webpack.dev.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "axios": "^0.18.0",
     "dotenv": "^6.2.0",
     "formik": "^1.4.3",
+    "fs-extra": "^7.0.1",
     "localforage": "^1.7.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -39,9 +41,7 @@
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "semantic-ui-react": "^0.84.0"
-  },
-  "devDependencies": {
+    "semantic-ui-react": "^0.84.0",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-proposal-function-bind": "^7.2.0",
